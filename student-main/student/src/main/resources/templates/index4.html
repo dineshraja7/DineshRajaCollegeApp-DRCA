@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Subject</title>
+
+    <style>
+         #subject{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#subject td, #subject th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#subject tr:nth-child(even){background-color: #f2f2f2;}
+
+#subject tr:hover {background-color: orange;}
+
+#subject th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0985e3;
+  color: white;
+}
+
+#h1 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: #9500ff;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+<a href = "http://localhost:8080/info/subject/addSubject">
+    <input type="button" class="button" value = "Add Subject" /></a>
+<a href="http://localhost:8080/info/studentMain/all">
+    <img src="https://silkroadtechnology.com/wp-content/uploads/2017/09/rrd_logo-1.png" width="150" height="100" align="left"></a>
+
+
+
+<h1 id="h1">Subjects</h1>
+<div th:switch =${subjects}>
+    <table id = "subject">
+        <thead>
+        <tr>
+            <th>Subject ID</th>
+           <th>Subject Name</th>
+            <th>Faculty Id</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each ="subject:${subjects}">
+            <td><a th:href="@{'http://localhost:8080/info/subject/id/'+${subject.subjectId}}"><label th:text="${subject.subjectId}"></label></a></td>
+            <td th:text="${subject.subjectName}"></td>
+            <td th:text="${subject.facultyId}"></td>
+
+
+
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

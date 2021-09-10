@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+    <meta charset="UTF-8">
+    <title>Student Progress</title>
+    <a href="http://localhost:8080/info/stusub/all" class="button">&laquo; Previous</a>
+    <style>
+               h3{
+      width: 500px;
+    border-color: black;
+    border-style: solid;
+     border-width: thin;
+       padding: 10px;
+  border-radius: 25px;
+      border-spacing: 15px 50px;
+       border-collapse: collapse;
+         background-color: #e5eef3;
+  }
+  .button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+                </style>
+
+</head>
+<body>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body  style="background-image: url('https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg');">
+<center>
+
+    <nav>
+        <ul>
+            <a href="http://localhost:8080/info/studentMain/all">
+                <img src="https://silkroadtechnology.com/wp-content/uploads/2017/09/rrd_logo-1.png" width="150"height="80"></a>
+
+
+        </ul>
+    </nav>
+
+    <h1 id="h1"> Enrollment CRUD</h1>
+    <table id = "stu_subject">
+        <form action="#" th:action="@{http://localhost:8080/info/stusub/saveResult}" th:object="${stu_subject}" method="post">
+            <a th:href = "@{'http://localhost:8080/info/stusub/UpdateMarks/'+${stu_subject.studentMarks}}">
+                <input type="button" class="button" value="Update Marks" /></a>
+
+
+
+
+            <h3> <div><label><b>Subject ID:</b></label> <label th:text=${stu_subject.subjectId}></label></div><br>
+                <div><label><b>Student Marks:</b></label> <label th:text=${stu_subject.studentMarks}></label></div><br>
+                <div><label><b>Student Result:</b></label> <label th:text=${stu_subject.studentsResult}></label></div><br>
+            </h3>
+
+
+
+
+
+
+
+        </form>
+    </table>
+    </table>
+    </div>
+</center>

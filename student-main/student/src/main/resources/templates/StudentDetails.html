@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+    <meta charset="UTF-8">
+    <title>Subject</title>
+    <style type = "text/css">
+    h3{
+      width: 500px;
+    border-color: black;
+    border-style: solid;
+     border-width: thin;
+       padding: 10px;
+  border-radius: 25px;
+      border-spacing: 15px 50px;
+       border-collapse: collapse;
+         background-color: #e5eef3;
+  }
+  .button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+ </style>
+
+</head>
+<body>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body  style="background-image: url('https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg');">
+<center>
+
+<nav>
+    <ul>
+        <a href="http://localhost:8080/info/studentMain/all">
+            <img src="https://silkroadtechnology.com/wp-content/uploads/2017/09/rrd_logo-1.png" width="150"height="100"align = "left"></a>
+
+
+    </ul>
+</nav>
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+html {
+   font-family: Arial, sans-serif;
+  font-weight: 400;
+}
+
+th, td {
+  text-align: left;
+  font-family: Arial, sans-serif;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color:  #e5eef3;
+  color: black;
+  div {
+    text-align:left;
+    }
+
+ h1 {
+  text-align: center;
+}
+
+
+</style>
+
+
+
+
+
+
+    <h1 id="h1">Student Info</h1>
+
+
+
+    <a th:href = "@{'http://localhost:8080/info/Student/UpdateStudent/'+${studentInfo.studentId}}">
+        <input type="button" class="button" value="Update Student" /></a>
+    <a th:href = "@{'http://localhost:8080/info/Student/deleteStudent/'+${studentInfo.studentId}}">
+        <input type="button" class="button" value="DeleteStudent" /></a>
+
+
+
+
+
+    <h3><b><header><label th:text=${studentInfo.studentFirstName}></label></header></b></div>
+        <div><label><b>Last Name:</b></label>  <label th:text=${studentInfo.studentLastName}></label></div>
+        <div><label><b>Age:</b></label>  <label th:text=${studentInfo.age}></label></div>
+        <div><label><b>Department:</b></label> <label th:text=${studentInfo.departmentName}></label></div>
+        <div><label><b>Class Teacher:</b></label> <label th:text=${studentInfo.facultyFirstName}></label></div></h3>
+
+
+</div>
+
+
+        <div th:switch =${studentInfo}>
+        <table id = "subject">
+
+
+
+
+
+        <thead>
+        <table style="width:1px; border: 1px solid black">
+        <h2>Subjects Details</h2>
+        <th>SubjectId</th>
+        <th>SubjectName</th>
+        <th>Faculty First Name</th>
+        <th>Faculty Last Name</th>
+            <th>Marks</th>
+            <th>Result</th>
+
+
+
+
+    </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="subject:${studentInfo.stuSubjects}">
+             <td th:text="${subject.subjectId}"></td>
+            <td th:text="${subject.subjectName}"></td>
+            <td th:text="${subject.facFirstName}"></td>
+            <td th:text="${subject.facLastName}"></td>
+            <td th:text="${subject.studentMarks}"></td>
+            <td th:text="${subject.studentsResult}"></td>
+
+
+
+
+
+        </tr>
+        </tbody>
+
+
+        </table>
+            </table>
+        </table>
+</table>
+        </div>
+
+    <div class="header">
+        <h1>Project Details</h1>
+        <style>
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+#divi{
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+div.b {
+  word-wrap: break-word;
+}
+</style>
+    </div>
+
+
+    <b>Title:<a th:href="@{'http://localhost:8080/info/project/id/'+${studentInfo.projectId}}"><label th:text=${studentInfo.projectName}></label></div></a></b><label><b></b></label>
+    <div><label><b>Description:</b></label><div class = "b"><label th:text=${studentInfo.projectDescription}></label></div></div>
+    <div><label><b>Start Date:</b></label> <label th:text=${studentInfo.startDate}></label></div>
+    <div><label><b>End Date:</b></label> <label th:text=${studentInfo.endDate}></label></div>
+        <div><label><b>Status:</b></label> <label th:text=${studentInfo.projectStatus}></label></div>
+
+
+
+
+</table>
+        </form>
+</center>
+</body>
+
+</html>
+
+

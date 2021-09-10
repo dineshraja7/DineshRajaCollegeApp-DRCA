@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Enrollment CRUD</title>
+
+  <style>
+        #stu_subject{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#stu_subject td, #stu_subject th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#stu_subject tr:nth-child(even){background-color: #f2f2f2;}
+
+#stu_subject tr:hover {background-color: orange;}
+
+#stu_subject th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0985e3;
+  color: white;
+}
+
+#h1 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: #9500ff;
+}
+
+    </style>
+</head>
+<body>
+<a href="http://localhost:8080/info/studentMain/all">
+  <img src="https://silkroadtechnology.com/wp-content/uploads/2017/09/rrd_logo-1.png" width="150" height="100" align="left"></a>
+
+
+<h1 id="h1">Enrollment</h1>
+<div th:switch =${stu_subjects}>
+  <table id = "stu_subject">
+    <thead>
+    <tr>
+      <th>StudentSubjectID</th>
+      <th>Student ID</th>
+      <th>Subject ID</th>
+      <th>Student Marks</th>
+      <th>Student Result</th>
+      <th>Student Name</th>
+      <th>Subject Name</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each ="stu_subject:${stu_subjects}">
+      <td th:text="${stu_subject.stuSubId}"></td>
+      <td><a th:href="@{'http://localhost:8080/info/studentDetails/details/'+${stu_subject.studentId}}"><label th:text="${stu_subject.studentId}"></label></a>
+      <td><a th:href="@{'http://localhost:8080/info/subjectInfo/subject/'+${stu_subject.subjectId}}"><label th:text="${stu_subject.subjectId}"></label></a>
+      <td th:text="${stu_subject.studentMarks}"></td>
+      <td th:text="${stu_subject.studentsResult}"></td>
+      <td th:text="${stu_subject.studentName}"></td>
+      <td th:text="${stu_subject.subjectName}"></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

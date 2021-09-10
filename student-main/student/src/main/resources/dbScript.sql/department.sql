@@ -1,0 +1,1 @@
+'department', 'CREATE TABLE `department` (\n  `department_id` int NOT NULL,\n  `department_name` varchar(50) NOT NULL,\n  `department_strength` int NOT NULL,\n  `department_location` varchar(50) NOT NULL,\n  PRIMARY KEY (`department_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'

@@ -1,0 +1,1 @@
+'enrollment', 'CREATE TABLE `enrollment` (\n  `stu_sub_id` int NOT NULL,\n  `student_id` int NOT NULL,\n  `student_name` varchar(100) DEFAULT NULL,\n  `subject_id` int NOT NULL,\n  `subject_name` varchar(100) DEFAULT NULL,\n  `student_marks` int NOT NULL,\n  `student_result` varchar(50) DEFAULT NULL\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'

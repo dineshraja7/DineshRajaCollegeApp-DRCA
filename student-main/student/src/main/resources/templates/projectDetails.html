@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Participants</title>
+    <style>
+         #projectId{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#projectId td, #projectId th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#projectId tr:nth-child(even){background-color: #f2f2f2;}
+
+#projectId tr:hover {background-color: orange;}
+
+#projectId th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0985e3;
+  color: white;
+}
+
+#h1 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: #9500ff;
+}
+
+    </style>
+</head>
+<body>
+<a href="http://localhost:8080/info/studentMain/all">
+    <img src="https://i.pinimg.com/736x/59/bc/37/59bc37ef1fb77cd87db0530ee87085c3.jpg" width="150" height="70" align="left"></a>
+
+<h1 id="h1">Project Participants</h1>
+<div th:switch =${projectStudents}>
+    <table id = "projectId">
+        <thead>
+        <tr>
+
+            <th>Student First Name</th>
+            <th>Student Last Name</th>
+            <th>Class Year</th>
+
+
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each ="project:${projectStudents}">
+            <td th:text="${project.studentFirstName}"></td>
+            <td th:text="${project.studentLastName}"></td>
+            <td th:text="${project.classYear}"></td>
+
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

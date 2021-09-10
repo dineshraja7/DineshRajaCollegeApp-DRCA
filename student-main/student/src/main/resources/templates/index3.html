@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Department</title>
+
+    <style>
+         #department{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#department td, #department th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#department tr:nth-child(even){background-color: #f2f2f2;}
+
+#department tr:hover {background-color: orange;}
+
+#department th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0985e3;
+  color: white;
+}
+
+#h1 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: #9500ff;
+
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+    </style>
+
+
+</head>
+<body>
+
+
+<a href="http://localhost:8080/info/studentMain/all">
+    <img src="https://silkroadtechnology.com/wp-content/uploads/2017/09/rrd_logo-1.png" width="150" height="100" align="left"></a>
+<a href = "http://localhost:8080/info/department/addDepartment">
+    <input type="button" class="button" value = "Add Department" /></a>
+
+
+
+<h1 id="h1">Department</h1>
+<div th:switch =${departments}>
+    <table id = "department">
+
+
+        <th>Department Id</th>
+            <th>Department Name</th>
+            <th>Department Strength</th>
+            <th>Department Location</th>
+
+
+        </tr>
+
+
+        <thead>
+        <tbody>
+
+
+
+        </thead>
+
+        <tbody>
+
+        <tr th:each="department:${departments}">
+            <td><a th:href="@{'http://localhost:8080/info/department/details/'+${department.departmentId}}"><label th:text="${department.departmentId}"></label></a>
+            <td th:text="${department.departmentName}"></td>
+            <td th:text="${department.departmentStrength}"></td>
+            <td th:text="${department.departmentLocation}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

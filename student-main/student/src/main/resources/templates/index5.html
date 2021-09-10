@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty</title>
+
+    <style>
+         #faculty{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#faculty td, #faculty th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#faculty tr:nth-child(even){background-color: #f2f2f2;}
+
+#faculty tr:hover {background-color: orange;}
+
+#faculty th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0985e3;
+  color: white;
+}
+
+#h1 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: #9500ff;
+}
+ .button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+<a href="http://localhost:8080/info/studentMain/all">
+    <img src="https://silkroadtechnology.com/wp-content/uploads/2017/09/rrd_logo-1.png" width="150" height="100" align="left"></a>
+<a href = "http://localhost:8080/info/faculty/addFaculty">
+    <input type="button" class="button" value = "Add Faculty" /></a>
+
+
+<h1 id="h1">Faculties</h1>
+<div th:switch =${faculties}>
+    <table id = "faculty">
+        <thead>
+        <tr>
+            <th>Faculty ID</th>
+            <th>Subject ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Subject Handling</th>
+            <th>Basic Pay</th>
+            <th>Start Date</th>
+            <th>Department ID</th>
+            <th>Faculty Image</th>
+
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each ="faculty:${faculties}">
+            <td th:text="${faculty.facultyId}"></td>
+            <td th:text="${faculty.subjectId}"></td>
+            <td><a th:href="@{'http://localhost:8080/info/faculty/name/'+${faculty.facultyFirstName}}"><label th:text="${faculty.facultyFirstName}"></label></a></td>
+            <td th:text="${faculty.facultyLastName}"></td>
+            <td th:text="${faculty.age}"></td>
+            <td th:text="${faculty.subjectHandling}"></td>
+            <td th:text="${faculty.basicPay}"></td>
+            <td th:text="${faculty.startDate}"></td>
+            <td th:text="${faculty.departmentId}"></td>
+            <td> <img th:src="*{'data:image/jpg;base64,'+faculty.facImgStr}" height ="150",width="100" /></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

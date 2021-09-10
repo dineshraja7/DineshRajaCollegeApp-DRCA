@@ -1,0 +1,1 @@
+'project', 'CREATE TABLE `project` (\n  `project_name` varchar(50) NOT NULL,\n  `project_description` varchar(100) NOT NULL,\n  `start_date` date NOT NULL,\n  `end_date` date NOT NULL,\n  `project_status` varchar(50) NOT NULL,\n  `project_id` int NOT NULL\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'

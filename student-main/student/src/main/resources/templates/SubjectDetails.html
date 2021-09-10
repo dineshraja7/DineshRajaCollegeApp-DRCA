@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+    <meta charset="UTF-8">
+    <title>Subject Details</title>
+    <style>
+               h3{
+      width: 500px;
+    border-color: black;
+    border-style: solid;
+     border-width: thin;
+       padding: 10px;
+  border-radius: 25px;
+      border-spacing: 15px 50px;
+       border-collapse: collapse;
+         background-color: #e5eef3;
+  }
+  .button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+                </style>
+
+</head>
+<body>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body  style="background-image: url('https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg');">
+<center>
+
+    <nav>
+        <ul>
+            <a href="http://localhost:8080/info/studentMain/all">
+                <img src="https://silkroadtechnology.com/wp-content/uploads/2017/09/rrd_logo-1.png" width="150"height="100"></a>
+
+
+        </ul>
+    </nav>
+
+    <h1 id="h1">Subject Details</h1>
+    <table id = "subject">
+        <form action="#" th:action="@{http://localhost:8080/info/subject/saveSubject}" th:object="${subject}" method="post">
+
+            <a th:href = "@{'http://localhost:8080/info/subject/UpdateSubject/'+${subject.subjectId}}">
+                <input type="button" class="button" value="Update Subject" /></a>
+
+            <a th:href = "@{'http://localhost:8080/info/subject/deleteSubject/'+${subject.subjectId}}">
+                <input type="button" class="button" value="Delete Subject" /></a>
+
+
+            <h3> <div><label><b>Subject ID:</b></label> <label th:text=${subject.subjectId}></label></div><br>
+                <div><label><b>Subject Name:</b></label> <label th:text=${subject.subjectName}></label></div><br>
+                <div><label><b>Faculty ID:</b></label> <label th:text=${subject.facultyId}></label></div><br>
+
+            </h3>
+
+
+
+
+
+
+
+        </form>
+    </table>
+
+
+</center>
+</body>
+</html>

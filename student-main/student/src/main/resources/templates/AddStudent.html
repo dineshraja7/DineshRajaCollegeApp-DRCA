@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<title>CRUD Students</title>
+
+
+
+<style>
+
+  body
+{
+
+  background-color: #cccccc;
+    margin: 0;
+    padding: 0;
+    background-color:#e5eef3;
+    font-family: 'Arial';
+}
+.login{
+        width: 382px;
+        overflow: hidden;
+        margin: auto;
+        margin: 20 0 0 450px;
+        padding: 80px;
+        background: #FFFFFF;
+        border-radius: 15px ;
+
+}
+h2{
+    text-align: center;
+    color: #277582;
+    padding: 20px;
+}
+label{
+    color: #08ffd1;
+    font-size: 17px;
+}
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#logo{
+position:fixed;
+top:0;
+left:0;
+}
+</style>
+
+
+
+<h2>Add/Update Students</h2>
+<a href="http://localhost:8080/info/Student/all" class="button">&laquo; Previous</a>
+
+
+<a href="http://localhost:8080/info/studentMain/all">
+
+    <div id = "logo"><img src="https://silkroadtechnology.com/wp-content/uploads/2017/09/rrd_logo-1.png" width="150" height="100" align="top"></div></a>
+<div class = "login">
+
+    <form action="#" th:action="@{http://localhost:8080/info/Student/save}" th:object="${student}" enctype="multipart/form-data" method="post">
+
+
+
+        <table id = "student">
+
+            <tr>
+                <td>Student Id<label text="#{student.studentId}"></label></td>
+                <td><input type="number" th:field="*{studentId}" /></td>
+            </tr>
+            <tr>
+                <td>Student First Name<label text="#{student.studentFirstName}"></label></td>
+                <td><input type="text" th:field="*{studentFirstName}" /></td>
+            </tr>
+            <tr>
+
+                <td>Student Last Name<label text="#{student.studentLastName}"></label></td>
+                <td><input type="text" th:field="*{studentLastName}" /></td>
+            </tr>
+            <tr>
+                <td>Age<label text="#{student.age}"></label></td>
+                <td><input type="number" th:field="*{age}" /></td>
+            </tr>
+            <tr>
+                <td>Class Year<label text="#{student.classYear}"></label></td>
+                <td><input type="number" th:field="*{classYear}" /></td>
+            </tr>
+            <tr>
+                <td>Faculty ID<label text="#{student.facultyId}"></label></td>
+                <td><input type="number" th:field="*{facultyId}" /></td>
+            </tr>
+            <tr>
+                <td>Project ID<label text="#{student.projectId}"></label></td>
+                <td><input type="number" th:field="*{projectId}" /></td>
+            </tr>
+
+
+            <div>
+                <table>
+                <label for = "multifile">Choose File:</label>
+                <input type = "file" id="multifile" name = "file" th:field = "*{multipartFile}">
+
+
+                </table>
+                <form action= "http://localhost:8080/info/Student/save">
+                    <button type="submit" class="button" >Save</button>
+                </form>
+            </div>
+
+
+        </table>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
+
